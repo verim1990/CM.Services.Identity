@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>f5556c72-5db0-4026-9b1e-bd88c6915a97</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CM.Services.Identity.Concrete\CM.Services.Identity.Concrete.csproj" />
+    <ProjectReference Include="..\CM.Services.Identity.Infrastracture\CM.Services.Identity.Infrastracture.csproj" />
+    <ProjectReference Include="..\..\..\CM.Shared\CM.Shared.Web\CM.Shared.Web.csproj" />
+  </ItemGroup>
+
+</Project>

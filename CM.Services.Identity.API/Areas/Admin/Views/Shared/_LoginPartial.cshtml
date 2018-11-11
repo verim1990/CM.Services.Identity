@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<CM.Services.Identity.Contract.Global.Authentication.Domain.Models.ApplicationUser> SignInManager
+@inject UserManager<CM.Services.Identity.Contract.Global.Authentication.Domain.Models.ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a asp-controller="Manage" asp-action="UserDetails">Hello @UserManager.GetUserName(User)!</a>
+        </li>
+        <li>
+            <a asp-controller="Account" asp-action="Logout" asp-route-returnurl="@ViewData["ReturnUrl"]" class="text">Logout</a>
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+        <li><a asp-area="" asp-controller="Login" asp-action="Login">Log in</a></li>
+    </ul>
+}
